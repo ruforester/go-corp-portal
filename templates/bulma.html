@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <title>Portal</title>
+</head>
+
+
+<body>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-quarter">
+                <aside class="menu">
+                    <p class="menu-label">
+                        Инфо
+                    </p>
+                    <ul class="menu-list">
+                        <li><a hx-get="/links" hx-target="#main-content">Ресурсы</a></li>
+                        <li><a hx-get="/dir" hx-target="#main-content">Справочник</a></li>
+                        <li><a>Заявки</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Адмистратор
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Team Settings</a></li>
+                        <li><a>Invitations</a></li>
+                        <li><a>Cloud Storage Environment Settings</a></li>
+                        <li><a>Authentication</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Transactions
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Payments</a></li>
+                        <li><a>Transfers</a></li>
+                        <li><a>Balance</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="column">
+                <!-- <div style="display: grid;"> -->
+                    <div id="main-content" hx-trigger="load" hx-get="/links" class="column table-container"></div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+    </section>
+    <script src="js/htmx.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

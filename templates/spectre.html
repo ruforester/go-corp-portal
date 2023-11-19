@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/spectre.min.css">
+    <link rel="stylesheet" href="css/spectre-exp.min.css">
+    <link rel="stylesheet" href="css/spectre-icons.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="off-canvas off-canvas-sidebar-show">
+        <!-- off-screen toggle button -->
+        <a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebar-id">
+            <i class="icon icon-menu"></i>
+        </a>
+
+        <div id="sidebar-id" class="off-canvas-sidebar">
+            <ul class="nav">
+                <li class="divider" data-content="LINKS">
+                </li>
+                <li class="nav-item">
+                    <a hx-get="/links" hx-target="#main-content">Ресурсы</a>
+                </li>
+                <li class="nav-item">
+                    <a hx-get="/dir" hx-target="#main-content">Справочник</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Components</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Utilities</a>
+                </li>
+              </ul>
+        </div>
+
+        <a class="off-canvas-overlay" href="#close"></a>
+
+        <div  class="off-canvas-content" style="max-width: 100%;">
+            <div class="container" id="main-content" hx-trigger="load" hx-get="/dir"></div>
+            <!-- off-screen content -->
+        </div>
+    </div>
+    <script src="js/htmx.min.js"></script>
+</body>
+
+</html>
