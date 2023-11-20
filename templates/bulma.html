@@ -8,11 +8,53 @@
     <title>Portal</title>
 </head>
 
+<style>
+    html,
+    body {
+        margin: 0px;
+        height: 100vh;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+</style>
+
 
 <body>
     <section class="section">
+        <aside class="sidenav ">
+            <div class="container">
+                <div class="menu">
+                    <p class="menu-label">
+                        Инфо
+                    </p>
+                    <ul class="menu-list">
+                        <li><a hx-get="/links" hx-target="#main-content">Ресурсы</a></li>
+                        <li><a hx-get="/dir" hx-target="#main-content">Справочник</a></li>
+                        <li><a>Заявки</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        Админ
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>Team Settings</a></li>
+                        <li><a>Invitations</a></li>
+                        <li><a>Cloud Storage Environment Settings</a></li>
+                        <li><a>Authentication</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
         <div class="columns">
-            <div class="column is-one-quarter">
+            <!-- <div class="column is-one-quarter">
                 <aside class="menu">
                     <p class="menu-label">
                         Инфо
@@ -23,7 +65,7 @@
                         <li><a>Заявки</a></li>
                     </ul>
                     <p class="menu-label">
-                        Адмистратор
+                        Админ
                     </p>
                     <ul class="menu-list">
                         <li><a>Team Settings</a></li>
@@ -40,11 +82,12 @@
                         <li><a>Balance</a></li>
                     </ul>
                 </aside>
-            </div>
+            </div> -->
             <!-- <div class="column"> -->
-                <!-- <div style="display: grid;"> -->
-                    <div id="main-content" hx-trigger="load" hx-get="/links" class="column table-container"></div>
-                <!-- </div> -->
+            <!-- <div style="display: grid;"> -->
+            <div id="main-content" hx-trigger="load" hx-get="/links" class="column is-8 is-offset-3 table-container">
+            </div>
+            <!-- </div> -->
             <!-- </div> -->
         </div>
     </section>

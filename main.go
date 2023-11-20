@@ -15,7 +15,7 @@ func main() {
 	// router.Static("/", "./static")
 	e.Static("/", "static")
 	// router.LoadHTMLGlob("templates/*.html")
-	e.File("/", "templates/bs.html")
+	e.File("/", "templates/axentix.html")
 
 	e.GET("/links", func(c echo.Context) error {
 		return c.HTML(http.StatusOK, csvToHtml("links.csv", "a", ','))
@@ -60,9 +60,10 @@ func csvToHtml(csvPath, htmlElement string, sep rune) string {
 	}
 
 	if htmlElement == "table" {
-		htmlTable := "<table class='table table-striped table-responsive'>"
+		// htmlTable := "<table class='table table-striped table-responsive'>" //bootstrap
+		htmlTable := "<table class='table table-striped table-scroll'>" //spectre
 		for i, row := range s {
-			if i > 10 {
+			if i > 20 {
 				break
 			}
 			if i == 0 {

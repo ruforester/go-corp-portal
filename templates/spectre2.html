@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/spectre.min.css">
+    <link rel="stylesheet" href="css/spectre-exp.min.css">
+    <link rel="stylesheet" href="css/spectre-icons.min.css">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0px;
+        height: 100vh;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+</style>
+
+<body>
+
+    <aside class="sidenav bg-gray">
+        <div class="container">
+            <ul class="nav">
+                <li class="divider" data-content="ИНФО">
+                </li>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="" hx-get="/links" hx-target="#main-content">Ресурсы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" hx-get="/dir" hx-target="#main-content">Справочник</a>
+                    </li>
+                </ul>
+            </ul>
+            <ul class="nav">
+                <li class="divider" data-content="АДМИН">
+                </li>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <button class="btn btn-link">link button</button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="">Utilities</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </aside>
+    <div class="columns">
+        <div class="col-3">
+        </div>
+        <div class="col-8">
+            <header class="navbar">
+                <section class="navbar-section">
+                    <button class="btn btn-link navbar-brand">МСЭ</p>
+                </section>
+                <section class="navbar-section">
+                    <button class="btn">Вход</button>
+                </section>
+            </header>
+            <div class="container" id="main-content" hx-trigger="load" hx-get="/links" style="overflow-y: scroll;">
+            </div>
+        </div>
+    </div>
+    <script src="js/htmx.min.js"></script>
+</body>
+
+</html>
