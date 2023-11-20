@@ -15,7 +15,7 @@ func main() {
 	// router.Static("/", "./static")
 	e.Static("/", "static")
 	// router.LoadHTMLGlob("templates/*.html")
-	e.File("/", "templates/spectre.html")
+	e.File("/", "templates/bs.html")
 
 	e.GET("/links", func(c echo.Context) error {
 		return c.HTML(http.StatusOK, csvToHtml("links.csv", "a", ','))
@@ -60,19 +60,26 @@ func csvToHtml(csvPath, htmlElement string, sep rune) string {
 	}
 
 	if htmlElement == "table" {
-		htmlTable := "<table class='table table-striped table-scroll table-hover'>"
+		htmlTable := "<table class='table table-striped table-responsive'>"
 		for i, row := range s {
 			if i > 10 {
 				break
 			}
+			if i == 0 {
+				htmlTable = htmlTable + "<thead>"
+			}
 			htmlTable = htmlTable + "<tr>"
 			for _, col := range row {
-				// if j > 5 {
-				// 	break
-				// }
-				htmlTable = htmlTable + fmt.Sprintf("<td>%s</td>", col)
+				if i == 0 {
+					htmlTable = htmlTable + fmt.Sprintf("<th>%s</th>", col)
+				} else {
+					htmlTable = htmlTable + fmt.Sprintf("<td>%s</td>", col)
+				}
 			}
 			htmlTable = htmlTable + "</tr>"
+			if i == 0 {
+				htmlTable = htmlTable + "</thead>"
+			}
 		}
 		htmlTable = htmlTable + "</table>"
 		return htmlTable
