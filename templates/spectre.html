@@ -7,41 +7,79 @@
     <link rel="stylesheet" href="css/spectre.min.css">
     <link rel="stylesheet" href="css/spectre-exp.min.css">
     <link rel="stylesheet" href="css/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="off-canvas off-canvas-sidebar-show">
-        <!-- off-screen toggle button -->
-        <a class="off-canvas-toggle btn btn-primary btn-action" href="#sidebar-id">
-            <i class="icon icon-menu"></i>
-        </a>
-
-        <div id="sidebar-id" class="off-canvas-sidebar">
-            <ul class="nav">
-                <li class="divider" data-content="LINKS">
+    <div class="docs-container off-canvas off-canvas-sidebar-show">
+        <div class="docs-navbar">
+            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
+                <i class="icon icon-menu"></i>
+            </a>
+            <div class="btns d-flex">
+                <a class="btn btn-primary ml-1" href="" target="_blank">Вход</a>
+            </div>
+        </div>
+    
+    <div class="docs-sidebar off-canvas-sidebar" id="sidebar">
+        <div class="docs-brand">
+            <a class="docs-logo" href=""><img src="img/spectre-logo.svg" alt="Spectre.css CSS Framework">
+                <h2>МСЭ</h2>
+                <!-- <small class="label label-secondary text-bold">DOCS</small> -->
+            </a>
+        </div>
+        <div class="docs-nav">
+            <div class="accordion-container">
+        <div class="accordion">
+            <input id="accordion-elements" type="checkbox" name="docs-accordion-checkbox" hidden="">
+            <label class="accordion-header c-hand" for="accordion-elements">ИНФО</label>
+            <div class="accordion-body">
+              <ul class="menu menu-nav">
+                <li class="menu-item"><a href="../elements/typography.html" hx-get="/links" hx-target="#main-content">Ссылки</a>
                 </li>
-                <li class="nav-item">
-                    <a hx-get="/links" hx-target="#main-content">Ресурсы</a>
+                <li class="menu-item"><a href="../elements/tables.html" hx-get="/dir" hx-target="#main-content">Телефоны</a>
                 </li>
-                <li class="nav-item">
-                    <a hx-get="/dir" hx-target="#main-content">Справочник</a>
+                <li class="menu-item"><a href="../elements/buttons.html">Buttons</a>
                 </li>
-                <li class="nav-item">
-                  <a href="#">Components</a>
+                <li class="menu-item"><a href="../elements/forms.html">Forms</a>
                 </li>
-                <li class="nav-item">
-                  <a href="#">Utilities</a>
+                <li class="menu-item"><a href="../elements/icons.html">Icons.css</a>
+                </li>
+                <li class="menu-item"><a href="../elements/labels.html">Labels</a>
+                </li>
+                <li class="menu-item"><a href="../elements/code.html">Code</a>
+                </li>
+                <li class="menu-item"><a href="../elements/media.html">Media</a>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div class="accordion">
+            <input id="accordion-layout" type="checkbox" name="docs-accordion-checkbox" hidden="">
+            <label class="accordion-header c-hand" for="accordion-layout">АДМИН</label>
+            <div class="accordion-body">
+              <ul class="menu menu-nav">
+                <li class="menu-item"><a href="../layout/grid.html">Flexbox grid</a>
+                </li>
+                <li class="menu-item"><a href="../layout/responsive.html">Responsive</a>
+                </li>
+                <li class="menu-item"><a href="../layout/hero.html">Hero</a>
+                </li>
+                <li class="menu-item"><a href="../layout/navbar.html">Navbar</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            </div>
         </div>
-
-        <a class="off-canvas-overlay" href="#close"></a>
-
-        <div  class="off-canvas-content" style="max-width: 100%;">
-            <div class="container" id="main-content" hx-trigger="load" hx-get="/dir"></div>
-            <!-- off-screen content -->
+    </div>
+    <a class="off-canvas-overlay" href="#close"></a>
+    <div class="off-canvas-content mt-2">
+        <div class="docs-content mt-2" id="content" >
+            <div class="container pt-2" id="main-content" hx-trigger="load" hx-get="/links"></div>
         </div>
+    </div>
     </div>
     <script src="js/htmx.min.js"></script>
 </body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0px;
+        height: 100vh;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <nav>
+            <ul>
+              <li><strong>Brand</strong></li>
+            </ul>
+            <ul>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#" role="button">Button</a></li>
+            </ul>
+          </nav>
+    </div>
+    
+    <aside class="sidenav">
+        <nav>
+            <ul>
+                <li><a hx-get="/links" hx-target="#main-content">Ресурсы</a></li>
+                <li><a hx-get="/dir" hx-target="#main-content">Справочник</a></li>
+                <li><a>Заявки</a></li>
+            </ul>
+          </nav>
+    </aside>
+    <main id="main-content" hx-trigger="load" hx-get="/links">
+
+    </main>
+    <script src="js/htmx.min.js"></script>
+</body>
+</html>

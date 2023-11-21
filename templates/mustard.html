@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/mustard-ui.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">mustard</a>
+            </div>
+            <ul class="nav-links">
+                <li><a class="active" href="/docs/installation">Docs</a></li>
+                <li><a href="https://github.com/kylelogue/mustard-ui" target="_blank">GitHub</a></li>
+                <li><a href="/support">Support</a></li>
+            </ul>
+            <a class="mobile-menu-toggle"></a>
+            <ul class="mobile-menu menu">
+                <li><a href="/docs/installation">Docs</a></li>
+                <li><a href="https://github.com/kylelogue/mustard-ui" target="_blank">GitHub</a></li>
+                <li><a href="/support">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="container-large">
+            <div class="row row-reverse">
+                <div class="col col-lg-9" id="main-content" hx-trigger="load" hx-get="/links">
+                </div>
+                <div class="col col-lg-3 display-lg-up">
+                    <div class="sidebar sidebar-left">
+                        <h3 class="sidebar-category">Components</h3>
+                        <ul class="sidebar-links">
+                            <li><a href="" hx-get="/links" hx-target="#main-content">Ресурсы</a></li>
+                            <li><a href="" hx-get="/dir" hx-target="#main-content">Справочник</a></li>
+                            <li><a class="active" href="#">Cards</a></li>
+                            <li><a href="#">Footer</a></li>
+                            <li><a href="#">Header</a></li>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Modal</a></li>
+                            <li><a href="#">Navigation</a></li>
+                            <li><a href="#">Pagination</a></li>
+                            <li><a href="#">Panels</a></li>
+                            <li><a href="#">Progress Bars</a></li>
+                            <li><a href="#">Sidebar</a></li>
+                            <li><a href="#">Steppers</a></li>
+                            <li><a href="#">Tabs</a></li>
+                            <li><a href="#">Tags</a></li>
+                            <li><a href="#">Tooltips</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/htmx.min.js"></script>  
+</body>
+</html>

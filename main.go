@@ -15,7 +15,7 @@ func main() {
 	// router.Static("/", "./static")
 	e.Static("/", "static")
 	// router.LoadHTMLGlob("templates/*.html")
-	e.File("/", "templates/axentix.html")
+	e.File("/", "templates/spectre.html")
 
 	e.GET("/links", func(c echo.Context) error {
 		return c.HTML(http.StatusOK, csvToHtml("links.csv", "a", ','))
@@ -26,7 +26,7 @@ func main() {
 	})
 
 	e.GET("/dir", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, csvToHtml("example2.csv", "table", ','))
+		return c.HTML(http.StatusOK, csvToHtml("mse/phones.csv", "table", ';'))
 	})
 
 	print(csvToHtml("example2.csv", "table", ','))
@@ -62,10 +62,11 @@ func csvToHtml(csvPath, htmlElement string, sep rune) string {
 	if htmlElement == "table" {
 		// htmlTable := "<table class='table table-striped table-responsive'>" //bootstrap
 		htmlTable := "<table class='table table-striped table-scroll'>" //spectre
+		// htmlTable := "<table class='uk-table uk-table-striped'>" //uikit
 		for i, row := range s {
-			if i > 20 {
-				break
-			}
+			// if i > 20 {
+			// 	break
+			// }
 			if i == 0 {
 				htmlTable = htmlTable + "<thead>"
 			}
